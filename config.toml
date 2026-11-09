@@ -1,0 +1,47 @@
+[families.cmod_s7]
+prefix = "CMOD_S7"
+match_pattern = 'usb-Digilent_Digilent_Adept_USB_Device_([0-9A-Z]+)-if([0-9]+)-port0'
+jtag_interface = "00"
+uart_interface = "01"
+
+[global]
+baud = 1000000
+samples = 1
+placement_variant = "decor_left2"
+placement_gap = 1
+placement_offset = 0
+
+[studies.ergodicity]
+db_dir = "data/ergodicity"
+stages = [64]
+slices = [
+    "LEFT-LOWER-0",
+    "LEFT-LOWER-1",
+    "LEFT-UPPER-0",
+    "LEFT-UPPER-1",
+]
+challenges_file = "data/challenges/ergodicity.npy"
+
+[studies.baseline]
+db_dir = "data/baseline"
+stages = [64]
+samples= 201
+slices = [
+    "LEFT-LOWER-0",
+    "LEFT-LOWER-1",
+    "LEFT-UPPER-0",
+    "LEFT-UPPER-1",
+]
+challenges_file = "data/challenges/baseline.npy"
+
+[studies.modeling]
+db_dir = "data/modeling"
+stages = [64]
+samples= 201
+slices = [
+    "LEFT-LOWER-0",
+    "LEFT-LOWER-1",
+    "LEFT-UPPER-0",
+    "LEFT-UPPER-1",
+]
+challenges_file = "data/challenges/modeling.npy"
